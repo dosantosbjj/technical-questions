@@ -11,5 +11,5 @@ echo 'Informe abaixo qual a URL oficial para documentação da função date() n
       formato “Dia / Mês / Ano” com o Ano não resumido (4 dígitos):';
 echo '<hr/>';
 echo '<strong> Resposta </strong>: ';
-echo "A url oficial da função date é $dateUrl e a data formatada é: $today";
+echo "A url oficial da função date é: $dateUrl e a data formatada é: $today";
 ?>
