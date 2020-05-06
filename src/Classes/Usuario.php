@@ -33,14 +33,17 @@ class Usuario extends Permissao{
 
   public function preencherDados($nome, $telefone, $nivel)
   {
+    $params = func_get_args();
+    if(!count($params) === 3){
+      Utils::throwException('Favor informar os 3 parâmetros...');
+    }
     if(Utils::isFieldSet($nome)){
       Utils::throwException('Informe um nome...');
     }
-    $this->nome = $nome;
-    
+    $this->nome = $nome;    
     
     if(Utils::isFieldSet($telefone)){
-    Utils::throwException('Informe um telefone...');
+      Utils::throwException('Informe um telefone...');
     }
     $this->telefone = $telefone; 
 
@@ -48,6 +51,7 @@ class Usuario extends Permissao{
       Utils::throwException('Informe um nível...');
     }
     $nivel = Usuario::setNivel($nivel);
+    
   }
 }
 

@@ -1,11 +1,19 @@
 <?php
 
+use App\Classes\Usuario;
+
 require('../vendor/autoload.php');
 
-use App\Classes\Usuario;
+
 $usuario = new Usuario();
-$usuario->preencherDados('Admin','','');
-var_dump($usuario->getNome());
-// $usuario->cadastrar();
 
-
+try{
+  $usuario->preencherDados('Lucas','51981189706','Administrador');
+}catch (Exception $e){
+  echo 'Exceção capturada: ', $e->getMessage();
+}finally{
+  $usuario->cadastrar();
+  echo "<strong>Nome:</strong> ". $usuario->getNome() . "<br>";
+  echo "<strong>Telefone:</strong> " . $usuario->getTelefone() . "<br>";
+  echo "<strong>Nível:</strong> " . $usuario->getNivel();
+}
